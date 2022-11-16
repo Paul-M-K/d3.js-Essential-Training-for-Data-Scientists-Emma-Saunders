@@ -16,6 +16,17 @@ var svg = d3.select("body").append("svg")
                 .attr("width","100%");
 
 //Add rectangles to svg.
-svg.selectAll("rect") //seach svg to find rectangles
+// svg.selectAll("rect") //seach svg to find rectangles
+//         .data(dataArray)
+//         .enter().append("rect");
+
+
+//Add some additional attributes to svg
+svg.selectAll("rect") 
         .data(dataArray)
-        .enter().append("rect");
+        .enter().append("rect")
+        .attr("height",function(d,i){ return d*15; })
+        .attr("width","50")
+        .attr("x",function(d,i){return 60*i; })
+        .attr("y",function(d,i){ return 300-(d*15); })
+        .attr("fill","pink");
