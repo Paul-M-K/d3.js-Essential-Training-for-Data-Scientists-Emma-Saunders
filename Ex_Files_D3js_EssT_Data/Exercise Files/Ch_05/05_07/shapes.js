@@ -1,4 +1,10 @@
 var dataArray = [5,11,18];
+//create array of lables
+var dataDays = ['Mon','Wed','Fri'];
+
+var x = d3.scaleOrdinal()
+                  .domain()
+                  .range();
 
 var svg = d3.select("body").append("svg").attr("height","100%").attr("width","100%");
 
