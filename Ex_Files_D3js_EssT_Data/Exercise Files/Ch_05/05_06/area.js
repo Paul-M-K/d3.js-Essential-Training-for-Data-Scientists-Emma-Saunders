@@ -19,10 +19,11 @@ var x = d3.scaleTime()
 
 
 var yAxis = d3.axisLeft(y).ticks(3).tickPadding(10).tickSize(10);
+var xAxis = d3.axisBottom(x);
 
 
 var area = d3.area()
-                .x(function(d,i){ return i*20; })
+                .x(function(d,i){ return x(parseDate(dataYears[i])) ; })
                 .y0(height)
                 .y1(function(d){ return y(d); });
 var svg = d3.select("body").append("svg").attr("height","100%").attr("width","100%");
@@ -32,3 +33,7 @@ chartGroup.append("path").attr("d",area(dataArray));
 chartGroup.append("g")
       .attr("class","axis y")
       .call(yAxis);
+chartGroup.append("g")
+            .attr("class","axis x")
+            .attr("transform","translate(0,"+height+")")
+            .call(xAxis);
