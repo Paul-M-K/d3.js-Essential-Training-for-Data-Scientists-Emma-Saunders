@@ -32,3 +32,18 @@ g.tick text {
   font-size: 12px;
   fill: purple;
 }
+
+rect {
+  fill: lightblue;
+  stroke: cornflowerblue;
+}
+
+circle {
+  fill: indianred;
+}
+
+text {
+  font-family: arial;
+  fill: white;
+  font-size: 11px;
+}

@@ -37,7 +37,19 @@ console.log(letterNodes);
 
 });
 
+d3.text("test.txt").get(function(error,data){
+    
+    var myTabPostiotions = [];
+    var myNewlinePositions = [];
 
+    var tabVal = '\\b\t\\b';
+    var tabMod = 'g';
+    var tabRegExp = new RegExp();
+
+    var lineVal = '\\b\n\\b';
+    var lineMod = 'g';
+    var lineRegExp = new RegExp();
+})
 
 
 

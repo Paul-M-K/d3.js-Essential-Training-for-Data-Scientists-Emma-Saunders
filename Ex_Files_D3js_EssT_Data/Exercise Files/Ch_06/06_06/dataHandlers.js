@@ -30,13 +30,20 @@ d3.text("data.txt")
     });
 
 
+d3.xml("data.xml").get(function(error,data){
+    //js approch
+    var xmlLetter = data.documentElement.getElementsByTagName("letter");
+    // console.log(xmlLetter);
+    var letterNodes = d3.select(data).selectAll("letter")._groups[0][0];
+    console.log(letterNodes)
 
+});
 
 
 d3.json("treeData.json").get(function(error,data){
 
- console.log(data[0]);
- console.log(data[0].children);
- console.log(data[0].children[0].children[1].name);
+//  console.log(data[0]);
+//  console.log(data[0].children);
+//  console.log(data[0].children[0].children[1].name);
 
 });

@@ -4,7 +4,11 @@ d3.csv("prices.csv")
     .row(function(d){ return {month: parseDate(d.month), price:Number(d.price.trim().slice(1))}; })
     .get(function(error,data){
 
-//console.log(data);
+var nestedData = d3.nest()
+                      .key(function(d){ return d.month.getFullYear(); })
+                      .entries(data);
+
+console.log(nestedData);
 
     });
 
@@ -59,9 +63,11 @@ data.replace(lineRegExp, function(a,b){ myNewLinePositions.push(b); return a; })
 
 })
 
-d3.html("https://enable-cors.org").get(function(error,data){
-    console.log(data);
-})
+// d3.html("https://www.google.com").get(function(error,data){
+// var frag = data.querySelector("div");
+// console.log(frag);
+//
+// });
 
 
 d3.json("treeData.json").get(function(error,data){

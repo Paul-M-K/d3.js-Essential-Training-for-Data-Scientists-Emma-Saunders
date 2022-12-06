@@ -28,3 +28,10 @@ d3.text("data.txt")
       }
 //console.log(newRows);
     });
+
+
+d3.json("treeData.json").get(function(error,data){
+    console.log(data[0]);
+    console.log(data[0].children);
+    console.log(data[0].children[0].children[1].name);
+});
